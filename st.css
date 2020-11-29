@@ -1,0 +1,39 @@
+body {
+	font-family:Verdana;
+  background-color:white;
+}
+
+.baner, footer {
+	background:#ff9900;
+	color:white;
+	padding:30px;
+	font-size:120%;
+	text-align:center;
+	clear:both;
+}
+
+.srodek {
+	background:white;
+	width:100%;
+	height:auto;
+  text-align:center;
+  margin-top:100px;
+  margin-bottom:100px;
+}
+
+input[type=text] {
+  background-color:white;
+  width:20%;
+  height:25px;
+}
+
+input[type=password] {
+  background-color:white;
+  width:20%;
+  height:25px;
+}
+
+input[type=submit] {
+  background-color:#ff9900;
+  height:25px;
+}
