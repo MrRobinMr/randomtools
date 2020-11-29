@@ -1,6 +1,6 @@
 <?php
 require_once "conf.php";
-
+// sprawasdasdasd
 try{
  $db = new PDO("mysql:host=".$host.";dbname=".$db_name, $db_user, $db_password);
 }
