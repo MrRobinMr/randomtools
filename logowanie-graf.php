@@ -13,11 +13,9 @@
  <div class="srodek">
   <form action="zaloguj.php" method="post">
     Login<br /><br /><input type="text" name="login" placeholder="Login" /><br /><br /><br />
-    Hasło<br /><br /><input type="password" name="haslo" placeholder="Hasło" /><br /><br />
+    Hasło<br /><br /><input type="password" name="haslo" placeholder="Hasło" /><br /><br /><br />
     <input type="submit" value="Zaloguj się" />
   </form>
-  <br /> <br />
-  <a href="rejestracja.php">Rejestracja</a>
  </div>
  <footer>
    Opracowali:

@@ -1,10 +1,10 @@
 body {
-	font-family:Verdana;
+	font-family:"Lucida Sans Unicode";
   background-color:white;
 }
 
 .baner {
-	background:#ff9900;
+	background:#ffad33;
 	color:white;
 	padding:30px;
 	font-size:120%;
@@ -13,16 +13,16 @@ body {
 }
 
 footer {
-	background:#ff9900;
+	background:#ffad33;
 	color:white;
 	padding:30px;
 	font-size:100%;
 	text-align:right;
 	clear:both;
+	color:white;
 }
 
 .srodek {
-	background:white;
 	width:100%;
 	height:auto;
   text-align:center;
@@ -34,15 +34,23 @@ input[type=text] {
   background-color:white;
   width:20%;
   height:25px;
+	border-radius:4px;
+	border-color: black;
 }
 
 input[type=password] {
   background-color:white;
   width:20%;
   height:25px;
+	border-radius:4px;
+	border-color: black;
 }
 
 input[type=submit] {
-  background-color:#ff9900;
-  height:25px;
+  background-color:#ffad33;
+  height:40px;
+	border-color: black;
+	border-radius:3px;
+	width:110px;
+	font-weight: bold;
 }
