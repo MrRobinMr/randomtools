@@ -3,12 +3,21 @@ body {
   background-color:white;
 }
 
-.baner, footer {
+.baner {
 	background:#ff9900;
 	color:white;
 	padding:30px;
 	font-size:120%;
 	text-align:center;
+	clear:both;
+}
+
+footer {
+	background:#ff9900;
+	color:white;
+	padding:30px;
+	font-size:100%;
+	text-align:right;
 	clear:both;
 }
 

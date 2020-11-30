@@ -20,7 +20,8 @@
   <a href="rejestracja.php">Rejestracja</a>
  </div>
  <footer>
-   Najs
+   Opracowali:
+   Jakub Nowak, Grzegorz Skiermunt, Maciej Grzegorczyk
  </footer>
 </body>
 </html>
