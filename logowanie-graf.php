@@ -12,7 +12,7 @@
   </div>
  <div class="srodek">
   <form action="logowanie.php" method="post">
-    Login<br /><br /><input type="text" name="login" placeholder="Login" /><br /><br /><br />
+    E-mail<br /><br /><input type="text" name="email" placeholder="E-mail" /><br /><br /><br />
     Hasło<br /><br /><input type="password" name="haslo" placeholder="Hasło" /><br /><br /><br />
     <input type="submit" value="Zaloguj się" />
   </form>
