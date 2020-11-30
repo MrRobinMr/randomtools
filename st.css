@@ -4,22 +4,12 @@ body {
 }
 
 .baner {
-	background:#ffad33;
+	background-color:#ffad33;
 	color:white;
 	padding:30px;
 	font-size:120%;
 	text-align:center;
 	clear:both;
-}
-
-footer {
-	background:#ffad33;
-	color:white;
-	padding:30px;
-	font-size:100%;
-	text-align:right;
-	clear:both;
-	color:white;
 }
 
 .srodek {
@@ -28,6 +18,34 @@ footer {
   text-align:center;
   margin-top:100px;
   margin-bottom:100px;
+}
+
+.lewy {
+	background-color:white;
+	width:60%;
+	height:auto;
+	margin-top:100px;
+  margin-bottom:100px;
+	float:left;
+}
+
+.prawy {
+	background-color:white;
+	width:40%;
+	height:auto;
+	float:left;
+	margin-top:100px;
+  margin-bottom:100px;
+}
+
+footer {
+	background-color:#ffad33;
+	color:white;
+	padding:30px;
+	font-size:100%;
+	text-align:right;
+	clear:both;
+	color:white;
 }
 
 input[type=text] {
