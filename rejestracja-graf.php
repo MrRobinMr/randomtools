@@ -28,6 +28,7 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
  $sth->bindValue(':email', $email, PDO::PARAM_STR);
  $sth->bindValue(':password', $hashPassword, PDO::PARAM_STR);
  $sth->execute();
+ header("Location:logowanie-graf.php");
  unset($_POST);
 }else{
   echo "Podanay email jest już wykorzystany";
