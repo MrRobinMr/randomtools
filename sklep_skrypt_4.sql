@@ -8,7 +8,7 @@ create table klienci (
 	ID_klienta int not null auto_increment primary key,
 	imie varchar(20) not null,
 	nazwisko varchar(20) not null,
-	haslo varchar(20) not null,
+	haslo text not null,
 	email varchar(20) not null
 );
 

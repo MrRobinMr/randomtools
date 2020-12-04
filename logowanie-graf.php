@@ -11,7 +11,7 @@ catch (PDOException $e){
   $email=trim($_POST['email']);
   $haslo=trim($_POST['haslo']);
 
-  $sth = $db->prepare('SELECT haslo FROM klienci WHERE email=:email limit 1');
+  $sth = $db->prepare('SELECT haslo FROM klienci WHERE email=:email');
  $sth->bindValue(':email', $email, PDO::PARAM_STR);
  $sth->execute();
  $user = $sth->fetch();
