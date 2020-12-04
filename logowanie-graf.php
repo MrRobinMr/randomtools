@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['email'])){}
+if(isset($_POST['email'])){
 require_once "conf.php";
 try{
  $db = new PDO("mysql:host=".$host.";dbname=".$db_name, $db_user, $db_password);
@@ -11,13 +11,13 @@ catch (PDOException $e){
   $email=trim($_POST['email']);
   $haslo=trim($_POST['haslo']);
 
-  $sth = $db->prepare('SELECT * FROM klienci WHERE email=:email limit 1');
+  $sth = $db->prepare('SELECT haslo FROM klienci WHERE email=:email limit 1');
  $sth->bindValue(':email', $email, PDO::PARAM_STR);
  $sth->execute();
- $user = $sth->fetch(PDO::FETCH_ASSOC);
+ $user = $sth->fetch();
  if($user)
 {
- if(password_verify($password,$user['haslo']))
+ if(password_verify($haslo, $user['haslo']))
 {
  die("<h3>Uzytkownik zalogowany pomyslnie</h3>");
 $_SESSION['user']=$user['ID_klienta'];

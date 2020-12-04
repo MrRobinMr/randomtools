@@ -8,13 +8,19 @@ catch (PDOException $e){
 }
 if(isset($_POST['imie']))
 {
- $email = $_POST['email'];
- $password = $_POST['haslo1'];
- $chpass = $_POST['haslo2'];
- $imie = $_POST['imie'];
- $nazwisko = $_POST['nazwisko'];
+ $email = trim($_POST['email']);
+ $password = trim($_POST['haslo1']);
+ $chpass = trim($_POST['haslo2']);
+ $imie = trim($_POST['imie']);
+ $nazwisko = trim($_POST['nazwisko']);
  if($password==$chpass){
- $hashPassword = password_hash($password,PASSWORD_BCRYPT);
+ $hashPassword = password_hash($password, PASSWORD_BCRYPT);
+ $sth = $db->prepare('SELECT * FROM klienci WHERE email=:email');
+$sth->bindValue(':email', $email, PDO::PARAM_STR);
+$sth->execute();
+$user = $sth->fetch(PDO::FETCH_ASSOC);
+$count = $sth->rowCount();
+if ($count<1) {
  $sth = $db->prepare('INSERT INTO klienci (imie,nazwisko,haslo,email) VALUE
 (:imie,:nazwisko,:password,:email)');
 $sth->bindValue(':imie', $imie, PDO::PARAM_STR);
@@ -23,6 +29,9 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
  $sth->bindValue(':password', $hashPassword, PDO::PARAM_STR);
  $sth->execute();
  unset($_POST);
+}else{
+  echo "Podanay email jest już wykorzystany";
+}
 }else{
 	echo "Podaj poprawne dane";
 }
