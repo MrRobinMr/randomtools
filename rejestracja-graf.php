@@ -6,7 +6,7 @@ try{
 catch (PDOException $e){
  die ("Error connecting to database!");
 }
-if(isset($_POST['rejstracja']))
+if(isset($_POST['imie']))
 {
  $email = $_POST['email'];
  $password = $_POST['haslo1'];

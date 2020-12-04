@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['log'])){}
+if(isset($_POST['email'])){}
 require_once "conf.php";
 try{
  $db = new PDO("mysql:host=".$host.";dbname=".$db_name, $db_user, $db_password);
