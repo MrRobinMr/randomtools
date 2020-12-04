@@ -1,5 +1,11 @@
 <?php
-
+require_once "conf.php";
+try{
+ $db = new PDO("mysql:host=".$host.";dbname=".$db_name, $db_user, $db_password);
+}
+catch (PDOException $e){
+ die ("Error connecting to database!");
+}
 if(isset($_POST['rejstracja']))
 {
  $email = $_POST['email'];
@@ -9,7 +15,7 @@ if(isset($_POST['rejstracja']))
  $nazwisko = $_POST['nazwisko'];
  if($password==$chpass){
  $hashPassword = password_hash($password,PASSWORD_BCRYPT);
- $sth = $db->prepare('INSERT INTO user (imie,nazwisko,haslo,email) VALUE
+ $sth = $db->prepare('INSERT INTO klienci (imie,nazwisko,haslo,email) VALUE
 (:imie,:nazwisko,:password,:email)');
 $sth->bindValue(':imie', $imie, PDO::PARAM_STR);
 $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
