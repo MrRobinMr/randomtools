@@ -1,3 +1,28 @@
+<?php
+
+if(isset($_POST['rejstracja']))
+{
+ $email = $_POST['email'];
+ $password = $_POST['haslo1'];
+ $chpass = $_POST['haslo2'];
+ $imie = $_POST['imie'];
+ $nazwisko = $_POST['nazwisko'];
+ if($password==$chpass){
+ $hashPassword = password_hash($password,PASSWORD_BCRYPT);
+ $sth = $db->prepare('INSERT INTO user (imie,nazwisko,haslo,email) VALUE
+(:imie,:nazwisko,:password,:email)');
+$sth->bindValue(':imie', $imie, PDO::PARAM_STR);
+$sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
+ $sth->bindValue(':email', $email, PDO::PARAM_STR);
+ $sth->bindValue(':password', $hashPassword, PDO::PARAM_STR);
+ $sth->execute();
+ unset($_POST);
+}else{
+	echo "Podaj poprawne dane";
+}
+}
+
+?>
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
@@ -11,7 +36,7 @@
 		<h1>Rejestracja</h1>
 	</div>
 	<div class="srodek">
-	<form method="post" >
+	<form name="rejstracja" method="post" action="rejestracja-graf.php">
 		Imie <br /><br /> <input type="text" name="imie" placeholder="Imie" /><br /><br /><br />
 		Nazwisko <br /><br /> <input type="text" name="nazwisko" placeholder="Nazwisko" /><br /><br /><br />
 		E-mail <br /><br /> <input type="text" name="email" placeholder="E-mail" /><br /><br /><br />
