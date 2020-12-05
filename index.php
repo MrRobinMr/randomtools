@@ -12,6 +12,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=opera,chrome=1" />
 	<title>Random tools</title>
 	<link rel="stylesheet" href="st.css">
+	<link rel="icon" href="logo1-ConvertImage.ico" type="image"/>
 </head>
 <body>
 	<?php
@@ -21,6 +22,7 @@
 
     <?php
     require_once "conf.php";
+		$nr=1;
     try{
         $db=new mysqli($host,$db_user, $db_password,$db_name);
         if($db->connect_errno!=0)
@@ -44,7 +46,7 @@
             echo "<br>";
             echo "kategoria"." ".$row["ID_kategoria"]."";
             echo "<br>";
-            echo "<div><img src='foto/1.jpg' align='right' style='width:100px;height:100px'></div>";
+            echo "<div><img src='foto/$nr.jpg' align='right' style='width:100px;height:100px'></div>";
             echo "<div class='zakup'>";
             echo "<br>";
 
@@ -53,7 +55,7 @@
             echo "</div>";
             echo "</div>";
 
-
+						$nr++;
 
         }
     }else{

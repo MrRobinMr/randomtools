@@ -47,6 +47,7 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
 	<meta http-equiv="X-UA-Compatible" content="IE=opera,chrome=1" />
 	<title>Random tools</title>
 	<link rel="stylesheet" href="st.css">
+  <link rel="icon" href="logo1-ConvertImage.ico" type="image"/>
 </head>
 <body>
   <?php
