@@ -17,7 +17,7 @@
 	<?php
 		include_once('header1.php');
 	?>
-	<div class="srodek">
+
 
     <?php
     require_once "conf.php";
@@ -31,25 +31,25 @@
             $sql= $db->query ("SELECT nazwa,cena,ID_kategoria from produkty");
     $result = $sql->num_rows;
     if($result>0){
-        echo "<table>";
+        
         for($b=0;$b<$result;$b++)
         {
 
             $row=$sql->fetch_assoc();
-            echo "<tr>";
-            echo "<td>";
+            echo "<div class='produkty'>";
             echo  $row["nazwa"]."";
+            echo "<br>";
             echo "cena"." ".$row["cena"]."zł";
+    
             echo "<br>";
             echo "kategoria"." ".$row["ID_kategoria"]."";
-            echo "</td>";
-            echo "</tr>";
+            echo "</div>";
 
         }
     }else{
             echo "brak produktów";
         }
-        echo "</table>";
+       
         $db->close();
         }
 
@@ -61,7 +61,7 @@
 
     ?>
 
-	</div>
+
 	<?php
 		include_once('footer.php');
 	?>
