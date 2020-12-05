@@ -10,6 +10,7 @@ create table klienci (
 	nazwisko varchar(20) not null,
 	haslo text not null,
 	email varchar(20) not null
+	pracownik BIT
 );
 
 create table adresy (
@@ -23,13 +24,7 @@ create table adresy (
 	kraj char(10) not null
 );
 
-create table pracownicy(
-	ID_pracownicy int not null auto_increment primary key,
-	imie varchar(20) not null,
-	nazwisko varchar(20) not null,
-	haslo varchar(20) not null,
-	email varchar(20) not null
-);
+
 create table foto (
 	ID_produkty int not null,
 	foto text,
@@ -143,7 +138,7 @@ ALTER TABLE zamowienia
   ADD CONSTRAINT FOREIGN KEY (ID_klienta) REFERENCES klienci (ID_klienta) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT FOREIGN KEY (ID_adresy) REFERENCES adresy (ID_adresy) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT FOREIGN KEY (ID_status) REFERENCES status (ID_status) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT FOREIGN KEY (ID_pracownicy) REFERENCES pracownicy (ID_pracownicy) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT FOREIGN KEY (ID_pracownicy) REFERENCES klienci (ID_klienta) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE pro_zam
   ADD CONSTRAINT FOREIGN KEY (ID_produkty) REFERENCES produkty (ID_produkty) ON DELETE CASCADE ON UPDATE CASCADE,
