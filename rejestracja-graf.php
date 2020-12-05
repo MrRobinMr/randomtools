@@ -21,12 +21,13 @@ $sth->execute();
 $user = $sth->fetch(PDO::FETCH_ASSOC);
 $count = $sth->rowCount();
 if ($count<1) {
- $sth = $db->prepare('INSERT INTO klienci (imie,nazwisko,haslo,email) VALUE
-(:imie,:nazwisko,:password,:email)');
+ $sth = $db->prepare('INSERT INTO klienci (imie,nazwisko,haslo,email,pracownik) VALUE
+(:imie,:nazwisko,:password,:email,:pracownik)');
 $sth->bindValue(':imie', $imie, PDO::PARAM_STR);
 $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
  $sth->bindValue(':email', $email, PDO::PARAM_STR);
  $sth->bindValue(':password', $hashPassword, PDO::PARAM_STR);
+ $sth->bindValue(':pracownik', False, PDO::PARAM_STR);
  $sth->execute();
  header("Location:logowanie-graf.php");
  unset($_POST);

@@ -31,7 +31,7 @@
             $sql= $db->query ("SELECT nazwa,cena,ID_kategoria from produkty");
     $result = $sql->num_rows;
     if($result>0){
-        
+
         for($b=0;$b<$result;$b++)
         {
 
@@ -40,27 +40,27 @@
             echo  $row["nazwa"]."";
             echo "<br>";
             echo "cena"." ".$row["cena"]."zł";
-    
+
             echo "<br>";
             echo "kategoria"." ".$row["ID_kategoria"]."";
             echo "<br>";
             echo "<img src='foto/1.jpg' align='right' style='width:100px;height:100px'>";
-          
+
             echo "<div class='zakup'>";
             echo "<br>";
-            
+
 
             echo "<button type='button'  class='przycisk'>Dodaj do koszyka</button>";
             echo "</div>";
             echo "</div>";
-            
-          
+
+
 
         }
     }else{
             echo "brak produktów";
         }
-       
+
         $db->close();
         }
 

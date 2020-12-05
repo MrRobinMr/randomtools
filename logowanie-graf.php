@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once('header1.php');
 if(isset($_POST['email'])){
 require_once "conf.php";
 try{
@@ -11,7 +11,7 @@ catch (PDOException $e){
   $email=trim($_POST['email']);
   $haslo=trim($_POST['haslo']);
 
-  $sth = $db->prepare('SELECT haslo FROM klienci WHERE email=:email');
+  $sth = $db->prepare('SELECT * FROM klienci WHERE email=:email');
  $sth->bindValue(':email', $email, PDO::PARAM_STR);
  $sth->execute();
  $user = $sth->fetch();
@@ -19,8 +19,10 @@ catch (PDOException $e){
 {
  if(password_verify($haslo, $user['haslo']))
 {
- die("<h3>Uzytkownik zalogowany pomyslnie</h3>");
-$_SESSION['user']=$user['ID_klienta'];
+  $_SESSION["log"] = "tak";
+  $_SESSION["user"] = $user["ID_klienta"];
+  $_SESSION["admin"] = $user["pracownik"];
+  header("Location: index.php");
  }else{
  echo "<h3>Nieprawidlowe haslo</h3>";
  }
@@ -39,7 +41,7 @@ $_SESSION['user']=$user['ID_klienta'];
 </head>
 <body>
   <?php
-		include_once('header1.php');
+
 	?>
 <div class="srodekpl">
  <div class="item3 lewy">
