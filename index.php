@@ -60,7 +60,7 @@
             
         } 
     }else{
-            echo "0 produktów";
+            echo "brak produktów";
         }
         echo "</table>";
         $db->close();
@@ -69,7 +69,7 @@
 
     }catch(Exception $e )
     {
-        echo "o kurwa";
+        echo "bład";
     }
   
     ?>
