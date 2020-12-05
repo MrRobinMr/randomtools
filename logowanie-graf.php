@@ -41,14 +41,15 @@ $_SESSION['user']=$user['ID_klienta'];
   <?php
 		include_once('header1.php');
 	?>
- <div class="lewy">
+<div class="srodekpl">
+ <div class="item3 lewy">
   <form action="logowanie-graf.php" method="post" name="log">
     E-mail<br /><br /><input type="text" name="email" placeholder="E-mail" /><br /><br /><br />
     Hasło<br /><br /><input type="password" name="haslo" placeholder="Hasło" /><br /><br /><br />
     <input type="submit" value="Zaloguj się" />
   </form>
  </div>
- <div class="prawy">
+ <div class="item3 prawy">
  <form action="rejestracja-graf.php" method="post">
      <b>Zarejestruj się już dziś!</b><br /><br /><br />
      Otrzymasz dodatkowe liczne korzyści<br /><br />
@@ -58,6 +59,7 @@ $_SESSION['user']=$user['ID_klienta'];
    <input type="submit" value="Zarejestruj się" />
  </form>
  </div>
+</div>
  <?php
    include_once('footer.php');
  ?>

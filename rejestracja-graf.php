@@ -31,7 +31,7 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
  header("Location:logowanie-graf.php");
  unset($_POST);
 }else{
-  echo "Podanay email jest już wykorzystany";
+  echo "Podany email jest już wykorzystany";
 }
 }else{
 	echo "Podaj poprawne dane";
@@ -52,6 +52,7 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
 		include_once('header1.php');
 	?>
 	<div class="srodek">
+    <div class="item2 srodek-obiekt">
 	<form name="rejstracja" method="post" action="rejestracja-graf.php">
 		Imie <br /><br /> <input type="text" name="imie" placeholder="Imie" /><br /><br /><br />
 		Nazwisko <br /><br /> <input type="text" name="nazwisko" placeholder="Nazwisko" /><br /><br /><br />
@@ -66,6 +67,7 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
 		<input type="submit" value="Zarejestruj się" />
 	</form>
 	</div>
+</div>
   <?php
     include_once('footer.php');
   ?>

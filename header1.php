@@ -2,7 +2,7 @@
   <div class="item baner-l"><img src="logo1.png" alt="RandomTools" style="width:100px;height:100px;"></div>
   <div class="item baner-s">
     <form action="szukaj.php" method="post">
-      <input type="search" name="szukaj">
+      <input type="search" name="szukaj" placeholder="Szukaj">
       <input type="submit" value="Szukaj">
     </form>
   </div>
