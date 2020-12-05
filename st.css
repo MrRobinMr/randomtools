@@ -139,6 +139,10 @@ h2 {
 
 .produkty
 {
-margin: 20px;
+margin: 3%;
+height: 150px;
+font-weight: bold;
+width:1000px;
+background-color: #ff9940;
 
 }
