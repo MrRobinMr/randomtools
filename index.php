@@ -44,11 +44,13 @@
             echo "<br>";
             echo "kategoria"." ".$row["ID_kategoria"]."";
             echo "<br>";
+            echo "<img src='foto/1.jpg' align='right' style='width:100px;height:100px'>";
+          
             echo "<div class='zakup'>";
             echo "<br>";
             
 
-            echo "<button type='button' class='przycisk'>Dodaj do koszyka</button>";
+            echo "<button type='button'  class='przycisk'>Dodaj do koszyka</button>";
             echo "</div>";
             echo "</div>";
             

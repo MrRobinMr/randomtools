@@ -144,11 +144,14 @@ height: 150px;
 font-weight: bold;
 width:1000px;
 background-color: #ff9940;
+padding: 10px;
 
 }
 .przycisk
 {
+  
   height: auto
+  
   
 }
 
