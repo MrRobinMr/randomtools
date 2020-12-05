@@ -43,7 +43,16 @@
     
             echo "<br>";
             echo "kategoria"." ".$row["ID_kategoria"]."";
+            echo "<br>";
+            echo "<div class='zakup'>";
+            echo "<br>";
+            
+
+            echo "<button type='button' class='przycisk'>Dodaj do koszyka</button>";
             echo "</div>";
+            echo "</div>";
+            
+          
 
         }
     }else{

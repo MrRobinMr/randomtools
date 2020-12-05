@@ -146,3 +146,14 @@ width:1000px;
 background-color: #ff9940;
 
 }
+.przycisk
+{
+  height: auto
+  
+}
+
+
+.przycisk:hover
+{
+  background-color:rgb(68, 139, 68);
+}
