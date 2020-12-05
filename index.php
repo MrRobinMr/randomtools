@@ -44,14 +44,7 @@
             echo "<br>";
             echo "kategoria"." ".$row["ID_kategoria"]."";
             echo "<br>";
-<<<<<<< HEAD
-            echo "<img src='foto/1.jpg' align='right' style='width:100px;height:100px'>";
-
-=======
-          
             echo "<div><img src='foto/1.jpg' align='right' style='width:100px;height:100px'></div>";
-          
->>>>>>> bc82cf3bf94ccae49ee4022874da873d6735614a
             echo "<div class='zakup'>";
             echo "<br>";
 
