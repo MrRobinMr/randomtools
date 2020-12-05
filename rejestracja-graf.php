@@ -48,9 +48,9 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
 	<link rel="stylesheet" href="st.css">
 </head>
 <body>
-	<div class="baner">
-		<h1>Rejestracja</h1>
-	</div>
+  <?php
+		include_once('header1.php');
+	?>
 	<div class="srodek">
 	<form name="rejstracja" method="post" action="rejestracja-graf.php">
 		Imie <br /><br /> <input type="text" name="imie" placeholder="Imie" /><br /><br /><br />
@@ -66,9 +66,8 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
 		<input type="submit" value="Zarejestruj się" />
 	</form>
 	</div>
-	<footer>
-		Opracowali:
-    Jakub Nowak, Grzegorz Skiermunt, Maciej Grzegorczyk
-  </footer>
+  <?php
+    include_once('footer.php');
+  ?>
 </body>
 </html>

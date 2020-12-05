@@ -1,24 +1,3 @@
-a.menu
-{display: inline-block;
-	width: 25%;
-	padding: 15px 30px 15px 30px;
-	color: white;
-	text-align: : center;
-}
- a.menu:hover
- {
-	 font-size: 25px;
-	 background-color: #e97c33;
- }
-.menuu{
-	background-color:#ffad33;
-	color:white;
-	padding:15px;
-	font-size:120%;
-	text-align:center;
-	clear:both;
-}
-
 body {
 	font-family:"Lucida Sans Unicode";
   background-color:white;

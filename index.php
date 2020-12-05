@@ -14,24 +14,11 @@
 	<link rel="stylesheet" href="st.css">
 </head>
 <body>
- 
-
-
-
-
-	<div class="baner">
-        <h1>Sklep</h1>
-        </div>
-      
-      <div class="menuu" >  
-      <nav>   
-   <a class="menu " href="#">Kontakt</a>
-   <a class="menu " href="#">Regulamin</a>
-   <a class="menu " href="#">Rejestracja</a>
-   </nav>
-	</div>
+	<?php
+		include_once('header1.php');
+	?>
 	<div class="srodek">
-   
+
     <?php
     require_once "conf.php";
     try{
@@ -57,27 +44,27 @@
             echo "kategoria"." ".$row["ID_kategoria"]."";
             echo "</td>";
             echo "</tr>";
-            
-        } 
+
+        }
     }else{
             echo "brak produktów";
         }
         echo "</table>";
         $db->close();
         }
-     
+
 
     }catch(Exception $e )
     {
         echo "bład";
     }
-  
+
     ?>
-	
+
 	</div>
-	<footer>
-		Opracowali:
-    Jakub Nowak, Grzegorz Skiermunt, Maciej Grzegorczyk
-  </footer>
+	<?php
+		include_once('footer.php');
+	?>
+
 </body>
 </html>

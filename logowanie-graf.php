@@ -38,9 +38,9 @@ $_SESSION['user']=$user['ID_klienta'];
   <link rel="stylesheet" href="st.css">
 </head>
 <body>
-  <div class="baner">
-    <h1>Logowanie</h1>
-  </div>
+  <?php
+		include_once('header1.php');
+	?>
  <div class="lewy">
   <form action="logowanie-graf.php" method="post" name="log">
     E-mail<br /><br /><input type="text" name="email" placeholder="E-mail" /><br /><br /><br />
@@ -58,9 +58,8 @@ $_SESSION['user']=$user['ID_klienta'];
    <input type="submit" value="Zarejestruj się" />
  </form>
  </div>
- <footer>
-   Opracowali:
-   Jakub Nowak, Grzegorz Skiermunt, Maciej Grzegorczyk
- </footer>
+ <?php
+   include_once('footer.php');
+ ?>
 </body>
 </html>
