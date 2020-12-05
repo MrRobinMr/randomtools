@@ -32,7 +32,7 @@ create table pracownicy(
 );
 create table foto (
 	ID_produkty int not null,
-	foto BLOB,
+	foto text,
 	opis varchar(50),
 	typ varchar(20)
 );
