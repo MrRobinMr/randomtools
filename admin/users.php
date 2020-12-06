@@ -11,6 +11,10 @@ while($user = $sth->fetch(PDO::FETCH_ASSOC)){
   <form action=\"user_edycja.php\" method=\"post\"><input type=\"hidden\" name=\"id\" value=\""
 .$user["ID_klienta"]."\">
   <button type=\"submit\" name=\"edytuj\">Edytuj</button>
+  </form></td><td>
+  <form action=\"user_usun.php\" method=\"post\"><input type=\"hidden\" name=\"id\" value=\""
+.$user["ID_klienta"]."\">
+  <button type=\"submit\" name=\"edytuj\">Usuń</button>
   </form></td></tr>";
 }
 echo "</table>";
