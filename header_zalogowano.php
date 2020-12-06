@@ -11,7 +11,7 @@
         if(!$_SESSION['admin']){
           echo '<a href="moje-konto.php"><button type="button">Moje Konto</button></a>';
         }else{
-          echo '<a href="admin.php"><button type="button">Admin room</button></a>';
+          echo '<a href="admin/admin.php"><button type="button">Admin room</button></a>';
         }
     ?>
     <br /><br />

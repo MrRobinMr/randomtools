@@ -22,6 +22,7 @@ catch (PDOException $e){
   $_SESSION["log"] = "tak";
   $_SESSION["user"] = $user["ID_klienta"];
   $_SESSION["admin"] = $user["pracownik"];
+  $_SESSION["name"] = $user["imie"];
   header("Location: index.php");
  }else{
  echo "<h3>Nieprawidlowe haslo</h3>";
