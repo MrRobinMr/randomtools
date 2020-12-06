@@ -6,8 +6,8 @@ try{
 catch (PDOException $e){
  die ("Error connecting to database!");
 }
-$sth = $db->prepare('DELETE FROM klienci where ID_klienta=:id');
+$sth = $db->prepare('DELETE FROM produkty where ID_produkty=:id');
 $sth->bindValue(':id', $_POST['id'], PDO::PARAM_STR);
 $sth->execute();
-header("Location: users.php");
+header("Location: produkty.php");
 ?>
