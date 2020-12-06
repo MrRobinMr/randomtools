@@ -73,8 +73,8 @@
     <p style="text-align:justify">Wszystkie treści zamieszczone na stronie internetowej pod adresem Random tools korzystają z ochrony prawno autorskiej i są własnością Random tools Usługobiorca ponosi pełną odpowiedzialność za szkodę wyrządzoną Usługodawcy, będącą następstwem użycia jakiejkolwiek zawartości strony Random tools, bez zgody Usługodawcy.
     Jakiekolwiek wykorzystanie przez kogokolwiek, bez wyraźnej pisemnej zgody Usługodawcy, któregokolwiek z elementów składających się na treść oraz zawartość strony Random tools stanowi naruszenie prawa autorskiego przysługującego Usługodawcy i skutkuje odpowiedzialnością cywilnoprawną oraz karną.
     <p style="text-align:justify">8.POSTANOWIENIA KOŃCOWE</p>
-    Umowy zawierane za pośrednictwem Strony zawierane są zgodnie z prawem polskim.
-    W przypadku niezgodności jakiejkolwiek części Regulaminu z obowiązującym prawem, w miejsce zakwestionowanego przepisu Regulaminu zastosowanie mają właściwe przepisy prawa polskiego.
+    <p style="margin-bottom:25px">Umowy zawierane za pośrednictwem Strony zawierane są zgodnie z prawem polskim.
+    W przypadku niezgodności jakiejkolwiek części Regulaminu z obowiązującym prawem, w miejsce zakwestionowanego przepisu Regulaminu zastosowanie mają właściwe przepisy prawa polskiego.</p>
 
 
 	<?php
