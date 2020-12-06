@@ -61,7 +61,7 @@ create table produkty(
 
 create table kategorie (
 	ID_kategoria int not null auto_increment primary key,
-	nazwakat varchar(20) not null
+	nazwakat varchar(40) not null
 );
 
 INSERT INTO `kategorie`(`ID_kategoria`,`nazwakat`)VALUES
