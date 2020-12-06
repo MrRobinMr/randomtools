@@ -64,7 +64,7 @@ create table kategorie (
 	nazwakat varchar(20) not null
 );
 
-INSERT INTO `kategorie`(`ID_kategoria`,`nazwa`)VALUES
+INSERT INTO `kategorie`(`ID_kategoria`,`nazwakat`)VALUES
 	(1,'wiertarki'),
 	(2,'pilarki'),
 	(3,'szlifierki'),

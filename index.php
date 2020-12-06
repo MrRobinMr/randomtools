@@ -23,7 +23,7 @@
             throw new Exception(mysqli_connect_errno());
         }else
         {
-            $sql= $db->query ("SELECT nazwa,cena,ID_kategoria from produkty");
+            $sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty p RIGHT JOIN kategorie k ON p.ID_kategoria=k.ID_kategoria");
     $result = $sql->num_rows;
     if($result>0){
 
@@ -35,7 +35,7 @@
             echo "<div class='item4 produkty'>";
             echo "<b>".$row["nazwa"]."</b>";
             echo "<br>";
-						echo "Kategoria: ".$row["ID_kategoria"]."";
+						echo "Kategoria: ".$row["nazwakat"]."";
 						echo "<br>";
             echo "Cena: ".$row["cena"]." zł";
             echo "<br>";
