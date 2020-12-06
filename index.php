@@ -35,9 +35,9 @@
             echo "<div class='item4 produkty'>";
             echo "<b>".$row["nazwa"]."</b>";
             echo "<br>";
-            echo "Cena: ".$row["cena"]." zł";
+						echo "Kategoria: ".$row["ID_kategoria"]."";
 						echo "<br>";
-            echo "Kategoria: ".$row["ID_kategoria"]."";
+            echo "Cena: ".$row["cena"]." zł";
             echo "<br>";
             echo "<img src='foto/$nr.jpg' align='right' style='width:auto;height:150px'>";
             echo "<br><br><br>";
