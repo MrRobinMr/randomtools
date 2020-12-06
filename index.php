@@ -15,7 +15,7 @@
 
     <?php
     require_once "conf.php";
-		$nr=1;
+	
     try{
         $db=new mysqli($host,$db_user, $db_password,$db_name);
         if($db->connect_errno!=0)
@@ -39,14 +39,13 @@
 						echo "<br>";
             echo "Cena: ".$row["cena"]." zł";
             echo "<br>";
-            echo "<img src='foto/$nr.jpg' align='right' style='width:auto;height:150px'>";
+            echo "<img src='foto/$row[nazwa].jpg' align='right' style='width:auto;height:150px'>";
             echo "<br><br><br>";
 						echo "<button type='button'>Dodaj do koszyka</button>";
             echo "</div>";
             echo "</div>";
 
-						$nr++;
-
+					
         }
     }else{
             echo "brak produktów";
