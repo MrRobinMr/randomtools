@@ -1,14 +1,7 @@
-
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
 	<meta charset="utf-8" />
-    <style>
-    td {
-        border: solid #000 1px;
-        padding: 5px;
-    }
-    </style>
 	<meta http-equiv="X-UA-Compatible" content="IE=opera,chrome=1" />
 	<title>Random tools</title>
 	<link rel="stylesheet" href="st.css">
@@ -38,20 +31,17 @@
         {
 
             $row=$sql->fetch_assoc();
-            echo "<div class='produkty'>";
-            echo  $row["nazwa"]."";
+						echo "<div class='srodek'>";
+            echo "<div class='item4 produkty'>";
+            echo "<b>".$row["nazwa"]."</b>";
             echo "<br>";
-            echo "cena"." ".$row["cena"]."zł";
-
+            echo "Cena: ".$row["cena"]." zł";
+						echo "<br>";
+            echo "Kategoria: ".$row["ID_kategoria"]."";
             echo "<br>";
-            echo "kategoria"." ".$row["ID_kategoria"]."";
-            echo "<br>";
-            echo "<div><img src='foto/$nr.jpg' align='right' style='width:100px;height:100px'></div>";
-            echo "<div class='zakup'>";
-            echo "<br>";
-
-
-            echo "<button type='button'  class='przycisk'>Dodaj do koszyka</button>";
+            echo "<img src='foto/$nr.jpg' align='right' style='width:auto;height:150px'>";
+            echo "<br><br><br>";
+						echo "<button type='button'>Dodaj do koszyka</button>";
             echo "</div>";
             echo "</div>";
 
