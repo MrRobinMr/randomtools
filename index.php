@@ -15,7 +15,7 @@
 
     <?php
     require_once "conf.php";
-	
+
     try{
         $db=new mysqli($host,$db_user, $db_password,$db_name);
         if($db->connect_errno!=0)
@@ -23,8 +23,13 @@
             throw new Exception(mysqli_connect_errno());
         }else
         {
-            $sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty p RIGHT JOIN kategorie k ON p.ID_kategoria=k.ID_kategoria ORDER BY nazwa");
-    $result = $sql->num_rows;
+					if(isset($_POST['szukanie'])) {
+						$szukaj=$_POST['szukaj'];
+						$sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie where nazwa like '%".$szukaj."%' ORDER BY nazwa");
+					}else {
+            $sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie ORDER BY nazwa");
+					}
+    				@$result = $sql->num_rows;
     if($result>0){
 
         for($b=0;$b<$result;$b++)
@@ -45,10 +50,14 @@
             echo "</div>";
             echo "</div>";
 
-					
+
         }
     }else{
-            echo "brak produktów";
+						echo "<div class='srodek'>";
+						echo "<div class='item4 produkty'>";
+            echo "Brak produktów";
+						echo "</div>";
+						echo "</div>";
         }
 
         $db->close();

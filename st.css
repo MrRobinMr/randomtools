@@ -159,9 +159,14 @@ h2 {
 .item4 {
   width:1000px;
   margin:20px;
+	background-color: white;
   border:solid black;
 	text-align:left;
 	padding:20px;
+}
+
+.item4:hover {
+  border:solid grey;
 }
 
 .produkty {
