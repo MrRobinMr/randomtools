@@ -38,7 +38,7 @@ create table  producent (
 	nazwapro varchar(20) not null
 );
 
-INSERT INTO `producent`(`ID_producent`,`nazwa`)VALUES
+INSERT INTO `producent`(`ID_producent`,`nazwapro`)VALUES
 	(1,'Bosch'),
 	(2,'Dewalt'),
 	(3,'Drel'),
