@@ -15,7 +15,7 @@
 
     <?php
     require_once "conf.php";
-		$nr=1;
+	
     try{
         $db=new mysqli($host,$db_user, $db_password,$db_name);
         if($db->connect_errno!=0)
@@ -23,7 +23,7 @@
             throw new Exception(mysqli_connect_errno());
         }else
         {
-            $sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty p RIGHT JOIN kategorie k ON p.ID_kategoria=k.ID_kategoria");
+            $sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty p RIGHT JOIN kategorie k ON p.ID_kategoria=k.ID_kategoria ORDER BY nazwa");
     $result = $sql->num_rows;
     if($result>0){
 
@@ -39,14 +39,13 @@
 						echo "<br>";
             echo "Cena: ".$row["cena"]." zł";
             echo "<br>";
-            echo "<img src='foto/$nr.jpg' align='right' style='width:auto;height:150px'>";
+            echo "<img src='foto/$row[nazwa].jpg' align='right' style='width:auto;height:150px'>";
             echo "<br><br><br>";
 						echo "<button type='button'>Dodaj do koszyka</button>";
             echo "</div>";
             echo "</div>";
 
-						$nr++;
-
+					
         }
     }else{
             echo "brak produktów";

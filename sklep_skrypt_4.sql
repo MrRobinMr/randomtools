@@ -35,10 +35,10 @@ create table foto (
 
 create table  producent (
 	ID_producent int not null auto_increment primary key,
-	nazwa varchar(20) not null
+	nazwapro varchar(20) not null
 );
 
-INSERT INTO `producent`(`ID_producent`,`nazwa`)VALUES
+INSERT INTO `producent`(`ID_producent`,`nazwapro`)VALUES
 	(1,'Bosch'),
 	(2,'Dewalt'),
 	(3,'Drel'),
