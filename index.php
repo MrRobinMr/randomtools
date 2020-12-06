@@ -23,7 +23,7 @@
             throw new Exception(mysqli_connect_errno());
         }else
         {
-            $sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty p RIGHT JOIN kategorie k ON p.ID_kategoria=k.ID_kategoria");
+            $sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty p RIGHT JOIN kategorie k ON p.ID_kategoria=k.ID_kategoria ORDER BY nazwa");
     $result = $sql->num_rows;
     if($result>0){
 
