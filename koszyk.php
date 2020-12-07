@@ -32,7 +32,7 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
         $sql=$db->query("SELECT ID_produkty,nazwa,cena,na_stanie FROM produkty where ID_produkty='".$value."'");
           @$result = $sql->num_rows;
   if($result>0){
-    echo "<form method=\"post\" action=\"koszyk.php\">";
+    //echo "<form method=\"post\" action=\"#\">";
 
       for($b=0;$b<$result;$b++)
       {
@@ -42,11 +42,13 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
           echo "<td style='width:70%'>".$row["nazwa"]."</td>";
           echo "<td style='width:10%'>".$row["cena"]." zł</td>";
           echo "<td style='width:10%'><label for='quantity'>Ilość:</label><input type='number' id='quantity' name='quantity' value='1' min='1' max='".$row["na_stanie"]."'></td>";
-          echo "<td style='width:10%'>".$value."</td>";
+          echo "<td style='width:10%'><form method=\"post\" action=\"czy_kosz.php\">
+          <input type='hidden' name=\"id_p\" value=\"".$row["ID_produkty"]."\">
+          <input type='submit' name='usun' value='Usuń'></form></td>";
           echo "</tr>";
           echo "</table>";
       }
-    echo "</form>";
+  //  echo "</form>";
   }else{
           echo "Brak produktów";
       }
