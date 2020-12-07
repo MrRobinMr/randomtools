@@ -175,3 +175,5 @@ INSERT INTO produkty VALUES
 	(NULL,'Wiertarko-wkrętarka akumulatorowa BS 18 LT + ładowarka i akumulatory 1x2Ah 1x4Ah 602102502',7,1199.00 ,14,0.23,8),
 	(NULL,'wiertarka bezudarowa BE 75-16 750W 600580000',7,1001.73,18,0.23,8),
 	(NULL,'Metabo Młotowiertarka udarowa KHE 76 - 600341000',1, 3343.15,4,0.23,8);
+   create VIEW dodprodukty AS 
+ select `sklep`.`produkty`.`ID_produkty` AS `ID_produkty`,`sklep`.`produkty`.`nazwa` AS `nazwa`,`sklep`.`kategorie`.`nazwakat` AS `nazwakat`,`sklep`.`produkty`.`cena` AS `cena`,`sklep`.`produkty`.`na_stanie` AS `na_stanie`,`sklep`.`produkty`.`VAT` AS `VAT`,`sklep`.`producent`.`nazwapro` AS `nazwapro` from ((`sklep`.`produkty` join `sklep`.`kategorie` on(`sklep`.`produkty`.`ID_kategoria` = `sklep`.`kategorie`.`ID_kategoria`)) join `sklep`.`producent` on(`sklep`.`produkty`.`ID_producent` = `sklep`.`producent`.`ID_producent`))

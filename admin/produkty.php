@@ -1,7 +1,7 @@
 <?php
 include_once("admin_menu.php");
 echo "<link rel=\"stylesheet\" href=\"a_style.css\">";
-$sth = $db->prepare('SELECT ID_produkty,nazwa,nazwakat,cena,na_stanie,VAT,nazwapro FROM produkty natural join kategorie natural join producent');
+$sth = $db->prepare('SELECT * FROM dodprodukty');
 $sth->execute();
 echo "<h1>Produkty<h1>";
 echo "<form action=\"pro_dodaj.php\" method=\"post\"><button type=\"submit\" name=\"edytuj\">Dodaj</button></form>";
