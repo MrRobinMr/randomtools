@@ -98,7 +98,7 @@
 
     }catch(Exception $e )
     {
-        echo "bład";
+        echo "Błąd serwera";
     }
 
     ?>
