@@ -11,7 +11,7 @@ while($user = $sth->fetch(PDO::FETCH_ASSOC)){
   echo "<tr><td>".$user["nazwapro"]."</td><td>".$user["nazwa"]."</td><td>"
   .$user["nazwakat"]."</td><td>"
   .$user["na_stanie"]."</td><td>".$user["cena"]." ZŁ</td><td>".$vat." %</td><td>
-  <form action=\"user_edycja.php\" method=\"post\"><input type=\"hidden\" name=\"id\" value=\""
+  <form action=\"pro_edycja.php\" method=\"post\"><input type=\"hidden\" name=\"id\" value=\""
 .$user["ID_produkty"]."\">
   <button type=\"submit\" name=\"edytuj\">Edytuj</button>
   </form></td><td>
