@@ -39,14 +39,14 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
           $row=$sql->fetch_assoc();
           echo "<table align='center' style='width:80%;margin:20px'>";
           echo "<tr>";
-          echo "<td style='width:60%'>".$row["nazwa"]."</td>";
-          echo "<td style='width:20%'>".$row["cena"]." zł</td>";
-          echo "<td style='width:20%'><label for='quantity'>Ilość:</label><input type='number' id='quantity' name='quantity' value='1' min='1' max='".$row["na_stanie"]."'></td>";
+          echo "<td style='width:70%'>".$row["nazwa"]."</td>";
+          echo "<td style='width:10%'>".$row["cena"]." zł</td>";
+          echo "<td style='width:10%'><label for='quantity'>Ilość:</label><input type='number' id='quantity' name='quantity' value='1' min='1' max='".$row["na_stanie"]."'></td>";
+          echo "<td style='width:10%'>".$value."</td>";
           echo "</tr>";
           echo "</table>";
       }
     echo "</form>";
-
   }else{
           echo "Brak produktów";
       }
@@ -59,6 +59,7 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
       echo "Błąd serwera";
   }
 }
+echo '<a href="ukoszyk.php"><button type="button" style="height:60px;margin:20px">Usuń zawartość koszyka</button></a>';
 }else {
   echo "Brak produktów w koszyku";
 
