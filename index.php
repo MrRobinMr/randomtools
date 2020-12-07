@@ -77,7 +77,14 @@
             echo "<br>";
 						echo "W magazynie ".$row["na_stanie"]." sztuk";
 						echo "<br>";
-            echo "<img src='foto/$row[nazwa].jpg' align='right' style='width:auto;height:130px'>";
+						$fot = $db->query("SELECT * FROM foto where ID_produkty= ".$row["ID_produkty"]);
+						$f = $fot->num_rows;
+						if($f>0){
+							$zdj=$fot->fetch_assoc();
+							echo "<img src='$zdj[foto]' alt='$zdj[opis]' align='right' style='width:auto;height:130px'>";
+						}else{
+							echo "<img src='#' alt='brak zdjęcia' align='right' style='width:auto;height:130px'>";
+						}
             echo "<br><br><br>";
 						echo "<form method=\"post\" action=\"index.php\"><button name=\"ko\" type='submit' value=\"".$row["ID_produkty"]."\" >Dodaj do koszyka</button></form>";
             echo "</div>";

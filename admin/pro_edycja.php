@@ -15,7 +15,7 @@ $pro = $sth->fetch();
 ?>
 <br>
 <div>
-  <form method="post" action="pro_dod.php">
+  <form method="post" action="pro_dod.php" enctype="multipart/form-data">
   <table>
     <tr>
       <td>
@@ -73,6 +73,11 @@ $pro = $sth->fetch();
          ?>
       </td>
     </tr>
+    <tr>
+  <td>
+    Edytuj zdjęcie: <input type="file" name="zdj" accept="image/jpg">
+</td>
+</tr>
   </table>
   <button type="submit" name="id" value="<?php echo $_POST['id'];?>">Zapisz</button>
 </form>
