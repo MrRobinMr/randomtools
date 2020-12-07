@@ -55,7 +55,6 @@
 
         for($b=0;$b<$result;$b++)
         {
-
             $row=$sql->fetch_assoc();
 						echo "<div class='srodek'>";
             echo "<div class='item4 produkty'>";
@@ -74,8 +73,6 @@
 						echo "<a href='koszyk.php'><button type='button'>Dodaj do koszyka</button></a>";
             echo "</div>";
             echo "</div>";
-
-
         }
 
     }else{
