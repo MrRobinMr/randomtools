@@ -42,12 +42,12 @@
         {
 					if(isset($_POST['szukanie'])) {
 						$szukaj=$_POST['szukaj'];
-						$sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie where nazwa like '%".$szukaj."%' ORDER BY nazwa");
+						$sql= $db->query ("SELECT ID_produkty,nazwa,cena,nazwakat,nazwapro,na_stanie FROM produkty NATURAL JOIN kategorie NATURAL JOIN producent where nazwa like '%".$szukaj."%' ORDER BY nazwa");
 					}else if(isset($_POST['filtr'])) {
 						$opcja=$_POST['lista'];
-						$sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie where nazwakat like '".$opcja."' ORDER BY nazwa");
+						$sql= $db->query ("SELECT ID_produkty,nazwa,cena,nazwakat,nazwapro,na_stanie FROM produkty NATURAL JOIN kategorie NATURAL JOIN producent where nazwakat like '".$opcja."' ORDER BY nazwa");
 					}else {
-						$sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie ORDER BY nazwa");
+						$sql= $db->query ("SELECT ID_produkty,nazwa,cena,nazwakat,nazwapro,na_stanie FROM produkty NATURAL JOIN kategorie NATURAL JOIN producent ORDER BY nazwa");
 					}
 
     				@$result = $sql->num_rows;
@@ -61,18 +61,23 @@
             echo "<div class='item4 produkty'>";
             echo "<b>".$row["nazwa"]."</b>";
             echo "<br>";
+						echo "Producent: ".$row["nazwapro"]."";
+						echo "<br>";
 						echo "Kategoria: ".$row["nazwakat"]."";
 						echo "<br>";
             echo "Cena: ".$row["cena"]." zł";
             echo "<br>";
-            echo "<img src='foto/$row[nazwa].jpg' align='right' style='width:auto;height:110px'>";
-            echo "<br><br>";
-						echo "<button type='button'>Dodaj do koszyka</button>";
+						echo "W magazynie ".$row["na_stanie"]." sztuk";
+						echo "<br>";
+            echo "<img src='foto/$row[nazwa].jpg' align='right' style='width:auto;height:130px'>";
+            echo "<br><br><br>";
+						echo "<a href='koszyk.php'><button type='button'>Dodaj do koszyka</button></a>";
             echo "</div>";
             echo "</div>";
 
 
         }
+
     }else{
 						echo "<div class='srodek'>";
 						echo "<div class='item4 produkty'>";
