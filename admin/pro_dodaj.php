@@ -28,16 +28,16 @@ if(isset($_POST["sub"])){
   $sth->execute();
   $naz = $sth->fetch();
   $namee = $naz["ID_produkty"];
-  $foto = "../foto/".basename($_FILES["zdj"]["name"]).".jpg";
+  /*$foto = "../foto/".basename($_FILES["zdj"]["name"]).".jpg";
   if (move_uploaded_file($_FILES["zdj"]["name"], $foto)) {
       $sth = $db->prepare('INSERT INTO foto (ID_produkty, foto) VALUES(:id, :fo)');
       $sth->bindValue(':id', $naz["ID_produkty"], PDO::PARAM_STR);
       $sth->bindValue(':fo', $foto, PDO::PARAM_STR);
       $sth->execute();
-      header("Location: produkty.php");
    } else {
      echo "Sorry, there was an error uploading your file.";
-   }
+   }*/
+   header("Location: produkty.php");
 }
 ?>
 <html>
@@ -71,7 +71,7 @@ while($user = $sth->fetch(PDO::FETCH_ASSOC)){
   Cena: <input type="text" name="cena"><br>
   Na stanie: <input type="text" name="stan"><br>
   VAT: <input type="text" name="vat"><br>
-  Dodaj zdjęcie: <input type="file" name="zdj" id="zdj" accept="image/jpg">
+  <!--Dodaj zdjęcie: <input type="file" name="zdj" id="zdj" accept="image/jpg">-->
   <button type="submit" name="sub">Zapisz</button>
 </form>
 <a href="produkty.php"><button>Anuluj</button></a>
