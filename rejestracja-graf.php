@@ -64,6 +64,8 @@ $sth->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
 		<br /><br />
 		<label>
 			<input type="checkbox" name="regulamin" />     Akceptuję regulamin
+			<br>
+			<a href="regulamin.php">Regulamin</a>
 		</label>
 		<br /><br /><br />
 		<input type="submit" value="Zarejestruj się" />
