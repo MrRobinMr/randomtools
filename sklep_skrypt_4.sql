@@ -9,7 +9,7 @@ create table klienci (
 	imie varchar(20) not null,
 	nazwisko varchar(20) not null,
 	haslo text not null,
-	email varchar(20) not null,
+	email varchar(40) not null,
 	pracownik bit
 );
 
