@@ -32,7 +32,16 @@
 
     <?php
     require_once "conf.php";
-
+		if(isset($_POST["ko"])){
+			if(isset($_SESSION["koszyk"])){
+			array_push($_SESSION["koszyk"], $_POST["ko"]);
+			unset($_POST["ko"]);
+		}else {
+				$_SESSION["koszyk"]=[];
+				array_push($_SESSION["koszyk"], $_POST["ko"]);
+				unset($_POST["ko"]);
+		}
+		}
     try{
         $db=new mysqli($host,$db_user, $db_password,$db_name);
         if($db->connect_errno!=0)
@@ -70,7 +79,7 @@
 						echo "<br>";
             echo "<img src='foto/$row[nazwa].jpg' align='right' style='width:auto;height:130px'>";
             echo "<br><br><br>";
-						echo "<a href='koszyk.php'><button type='button'>Dodaj do koszyka</button></a>";
+						echo "<form method=\"post\" action=\"index.php\"><button name=\"ko\" type='submit' value=\"".$row["ID_produkty"]."\" >Dodaj do koszyka</button></form>";
             echo "</div>";
             echo "</div>";
         }

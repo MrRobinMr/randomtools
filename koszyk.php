@@ -1,19 +1,10 @@
 <?php
 
-session_start();
+include_once('header1.php');
 
-require_once "conf.php";
-
-try{
-    $db=new mysqli($host,$db_user,$db_password,$db_name);
-    if($db->connect_errno!=0)
-    {
-        throw new Exception(mysqli_connect_errno());
-    }else {
-
-    }
-catch(Exception $e ) {
-    echo "Błąd serwera";
+foreach ($_SESSION["koszyk"] as $key => $value) {
+  echo $value."<br>";
 }
 
+include_once('footer.php');
 ?>
