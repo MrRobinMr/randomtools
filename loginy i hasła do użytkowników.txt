@@ -1,0 +1,2 @@
+1.użytkownik login: j@n.pl hasło: nowak123
+2.administrator login: a@p.pl hasło: paprocki123
