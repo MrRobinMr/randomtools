@@ -16,6 +16,5 @@ catch (PDOException $e){
 <a href="admin.php"><button type="button">Strona główna</button></a>
 <a href="users.php"><button type="button">Użytkownicy</button></a>
 <a href="produkty.php"><button type="button">Produkty</button></a>
-<a href="index.php"><button type="button">Zamówienia</button></a>
-<a href="index.php"><button type="button">Ustawienia</button></a>
+<a href="zamowienia.php"><button type="button">Zamówienia</button></a>
 </div>
