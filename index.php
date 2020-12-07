@@ -12,6 +12,23 @@
 		include_once('header1.php');
 	?>
 
+	<div class="kategoria">
+		<div class="item5 srodek-obiekt">
+		<form action="index.php" method="post">
+			<select name="lista">
+				<option value="%">Wszystkie produkty</option>
+				<option value="wiertarki">wiertarki</option>
+				<option value="pilarki">pilarki</option>
+				<option value="szlifierki">szlifierki</option>
+				<option value="wiertła">wiertła</option>
+				<option value="agregaty">agregaty</option>
+				<option value="tarcze do cięcia drewna z gwoździami">tarcze do cięcia drewna z gwoździami</option>
+				<option value="wkrętarki">wkrętarki</option>
+			</select>
+			<input type="submit" name="filtr" value="Filtruj">
+		</form>
+	</div>
+</div>
 
     <?php
     require_once "conf.php";
@@ -26,9 +43,13 @@
 					if(isset($_POST['szukanie'])) {
 						$szukaj=$_POST['szukaj'];
 						$sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie where nazwa like '%".$szukaj."%' ORDER BY nazwa");
+					}else if(isset($_POST['filtr'])) {
+						$opcja=$_POST['lista'];
+						$sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie where nazwakat like '".$opcja."' ORDER BY nazwa");
 					}else {
-            $sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie ORDER BY nazwa");
+						$sql= $db->query ("SELECT nazwa,cena,nazwakat FROM produkty NATURAL JOIN kategorie ORDER BY nazwa");
 					}
+
     				@$result = $sql->num_rows;
     if($result>0){
 
@@ -44,8 +65,8 @@
 						echo "<br>";
             echo "Cena: ".$row["cena"]." zł";
             echo "<br>";
-            echo "<img src='foto/$row[nazwa].jpg' align='right' style='width:auto;height:150px'>";
-            echo "<br><br><br>";
+            echo "<img src='foto/$row[nazwa].jpg' align='right' style='width:auto;height:110px'>";
+            echo "<br><br>";
 						echo "<button type='button'>Dodaj do koszyka</button>";
             echo "</div>";
             echo "</div>";
