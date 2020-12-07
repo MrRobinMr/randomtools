@@ -18,7 +18,8 @@
 include_once('header1.php');
 
 require_once "conf.php";
-
+if(isset($_SESSION["koszyk"])){
+$_SESSION["koszyk"] = array_unique($_SESSION["koszyk"]);
 foreach ($_SESSION["koszyk"] as $key => $value) {
   try{
       $db=new mysqli($host,$db_user, $db_password,$db_name);
@@ -31,6 +32,7 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
         $sql=$db->query("SELECT ID_produkty,nazwa,cena,na_stanie FROM produkty where ID_produkty='".$value."'");
           @$result = $sql->num_rows;
   if($result>0){
+    echo "<form method=\"post\" action=\"koszyk.php\">";
 
       for($b=0;$b<$result;$b++)
       {
@@ -39,15 +41,15 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
           echo "<tr>";
           echo "<td style='width:60%'>".$row["nazwa"]."</td>";
           echo "<td style='width:20%'>".$row["cena"]." zł</td>";
-          echo "<td style='width:20%'><form method=\"post\" action=\"koszyk.php\"><label for='quantity'>Ilość:</label><input type='number' id='quantity' name='quantity' min='1' max='".$row["nazwa"]."'></form></td>";
+          echo "<td style='width:20%'><label for='quantity'>Ilość:</label><input type='number' id='quantity' name='quantity' value='1' min='1' max='".$row["na_stanie"]."'></td>";
           echo "</tr>";
           echo "</table>";
       }
+    echo "</form>";
 
   }else{
           echo "Brak produktów";
       }
-
       $db->close();
       }
 
@@ -56,6 +58,10 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
   {
       echo "Błąd serwera";
   }
+}
+}else {
+  echo "Brak produktów w koszyku";
+
 }
 
 include_once('footer.php');
