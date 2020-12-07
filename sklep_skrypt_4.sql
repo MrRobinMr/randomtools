@@ -12,6 +12,10 @@ create table klienci (
 	email varchar(40) not null,
 	pracownik bit
 );
+INSERT INTO  `klienci`(`ID_klienta`,`imie`,`nazwisko`,`haslo`,`email`,`pracownik`)VALUES
+(1,'Julia','Nowak','$2y$10$AXmSvylzCyLwA9n2oFzekOQkyPOywKtJAT9ZzjEYlQPbXJh/X8JZi','j@n.pl',0),
+(2,'Adam','Paprocki','$2y$10$l2I6vFMEBwWLTiYOHGKoSe7/r0RrzKVLlfFgj1UMIlymZlsuPeIoG','a@p.pl',1)
+;
 
 create table adresy (
 	ID_adresy int not null auto_increment primary key,
