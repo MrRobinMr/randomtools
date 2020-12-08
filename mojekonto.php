@@ -23,27 +23,35 @@
 		$user = $sth->fetch();
 		?>
 		<br>
-		<div>
+		<div class="srodek">
+			<div class="item3 srodek-obiekt">
 			<form method="post" action="konto_edycja.php">
-			<table>
+				<table>
 				<tr>
 					<td>
-						<?php echo "<input type=\"text\" name=\"imie\" placeholder=\"".$user["imie"]."\" value=\"".$user["imie"]."\" >";?>
+						Imie <br />
+						<?php echo "<input type=\"text\" name=\"imie\" placeholder=\"".$user["imie"]."\" value=\"".$user["imie"]."\" style=width:100%>";?>
+						<br /><br />
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<?php echo "<input type=\"text\" name=\"nazwisko\" placeholder=\"".$user["nazwisko"]."\"value=\"".$user["nazwisko"]."\">";?>
+						Nazwisko <br />
+						<?php echo "<input type=\"text\" name=\"nazwisko\" placeholder=\"".$user["nazwisko"]."\"value=\"".$user["nazwisko"]."\" style=width:100%>";?>
+						<br /><br />
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<?php echo "<input type=\"text\" name=\"email\" placeholder=\"".$user["email"]."\"value=\"".$user["email"]."\">";?>
+						E-mail <br />
+						<?php echo "<input type=\"text\" name=\"email\" placeholder=\"".$user["email"]."\"value=\"".$user["email"]."\" style=width:100%>";?>
+						<br /><br />
 					</td>
 				</tr>
 			</table>
 			<button type="submit" name="id" value="<?php echo $user["ID_klienta"];?>">Zapisz</button>
 		</form>
+	</div>
 		</div>
 		<br>
 <?php

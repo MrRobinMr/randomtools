@@ -6,7 +6,7 @@
 	   <title>Random tools</title>
      <style>
        table, th, td {
-         border: 1px solid black;
+         border: 2px solid black;
        }
      </style>
 	   <link rel="stylesheet" href="st.css">
@@ -41,7 +41,7 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
           echo "<td style='width:70%'>".$row["nazwa"]."</td>";
           echo "<td style='width:10%'>".$row["cena"]." zł</td>";
           echo "<td style='width:10%'><label for='quantity'>Ilość:</label><input type='number' id='quantity' name=\"".$row["ID_produkty"]."\" value='1' min='1' max='".$row["na_stanie"]."'></td>";
-          echo "<td style='width:10%'><a href=\"czy_kosz.php?id_p=".$row["ID_produkty"]."\"><button name=\"id_p\" type=\"button\">Usuń</button></a></td>";
+          echo "<td style='width:10%'><a href=\"czy_kosz.php?id_p=".$row["ID_produkty"]."\"><button name=\"id_p\" type=\"button\" style=\"margin:20px\">Usuń</button></a></td>";
           echo "</tr>";
           echo "</table>";
       }
@@ -58,10 +58,14 @@ foreach ($_SESSION["koszyk"] as $key => $value) {
       echo "Błąd serwera";
   }
 }
-echo "<input type='submit' name='zam' value='Zamów'></form>";
+echo "<input type='submit' name='zam' value='Zamów' style=\"margin:20px\"></form>";
 echo '<a href="ukoszyk.php"><button type="button" style="height:60px;margin:20px">Usuń zawartość koszyka</button></a>';
 }else {
+  echo "<div class='srodek'>";
+  echo "<div class='item4 produkty'>";
   echo "Brak produktów w koszyku";
+  echo "</div>";
+  echo "</div>";
 
 }
 
