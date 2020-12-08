@@ -1,6 +1,6 @@
 <?php
 session_start();
-$us = $_POST["id_p"];
+$us = $_GET["id_p"];
 echo $us;
 if(count($_SESSION["koszyk"])<=1){
   unset($_SESSION["koszyk"]);
