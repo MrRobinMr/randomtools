@@ -209,5 +209,3 @@ INSERT INTO produkty VALUES
 	(20, 'foto/20.jpg', NULL),
 	(28, 'foto/28.jpg', NULL),
 	(29, 'foto/29.jpg', NULL);
-	 create VIEW dodprodukty AS
- select `sklep`.`produkty`.`ID_produkty` AS `ID_produkty`,`sklep`.`produkty`.`nazwa` AS `nazwa`,`sklep`.`kategorie`.`nazwakat` AS `nazwakat`,`sklep`.`produkty`.`cena` AS `cena`,`sklep`.`produkty`.`na_stanie` AS `na_stanie`,`sklep`.`produkty`.`VAT` AS `VAT`,`sklep`.`producent`.`nazwapro` AS `nazwapro` from ((`sklep`.`produkty` join `sklep`.`kategorie` on(`sklep`.`produkty`.`ID_kategoria` = `sklep`.`kategorie`.`ID_kategoria`)) join `sklep`.`producent` on(`sklep`.`produkty`.`ID_producent` = `sklep`.`producent`.`ID_producent`))
